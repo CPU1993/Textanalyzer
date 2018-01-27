@@ -1,0 +1,12 @@
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.deps.json
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.runtimeconfig.json
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.runtimeconfig.dev.json
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.dll
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.pdb
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.csprojResolveAssemblyReference.cache
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.csproj.CoreCompileInputs.cache
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.AssemblyInfoInputs.cache
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.AssemblyInfo.cs
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.dll
+D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.pdb

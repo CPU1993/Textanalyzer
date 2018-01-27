@@ -7,9 +7,19 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Hangfire" Version="1.6.17" />
+    <PackageReference Include="Hangfire.Core" Version="1.6.17" />
+    <PackageReference Include="Hangfire.Sqlite" Version="1.4.2" />
+    <PackageReference Include="Hangfire.Sqlite.Core" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0-alpha2-final" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.0.0-alpha2-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="NotMicrosoft.configuration" Version="1.0.1" />
+    <PackageReference Include="Seq.Extensions.Logging" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>

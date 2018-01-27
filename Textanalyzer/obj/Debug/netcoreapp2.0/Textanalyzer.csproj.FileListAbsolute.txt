@@ -10,3 +10,15 @@ D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Texta
 D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.AssemblyInfo.cs
 D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.dll
 D:\FH\Programmieren\PRO4\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.pdb
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.deps.json
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.runtimeconfig.json
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.runtimeconfig.dev.json
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.dll
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\bin\Debug\netcoreapp2.0\Textanalyzer.pdb
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.csprojResolveAssemblyReference.cache
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.csproj.CoreCompileInputs.cache
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.AssemblyInfoInputs.cache
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.AssemblyInfo.cs
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.dll
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\Textanalyzer.pdb
+C:\Users\Christoph\Documents\GitHub\Textanalyzer\Textanalyzer\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

@@ -14303,9 +14303,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Christoph\\Documents\\GitHub\\Textanalyzer\\Textanalyzer\\Textanalyzer.csproj",
-      "projectName": "Textanalyzer",
-      "projectPath": "C:\\Users\\Christoph\\Documents\\GitHub\\Textanalyzer\\Textanalyzer\\Textanalyzer.csproj",
+      "projectUniqueName": "C:\\Users\\Christoph\\Documents\\GitHub\\Textanalyzer\\Textanalyzer\\Textanalyzer.Web.csproj",
+      "projectName": "Textanalyzer.Web",
+      "projectPath": "C:\\Users\\Christoph\\Documents\\GitHub\\Textanalyzer\\Textanalyzer\\Textanalyzer.Web.csproj",
       "packagesPath": "C:\\Users\\Christoph\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Christoph\\Documents\\GitHub\\Textanalyzer\\Textanalyzer\\obj\\",
       "projectStyle": "PackageReference",

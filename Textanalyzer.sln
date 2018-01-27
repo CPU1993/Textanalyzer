@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textanalyzer", "Textanalyzer\Textanalyzer.csproj", "{03637857-A0A2-4DFA-A387-BD55051D9C52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Textanalyzer.Web", "Textanalyzer\Textanalyzer.Web.csproj", "{03637857-A0A2-4DFA-A387-BD55051D9C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textanalyzer.Data", "Textanalyzer.Data\Textanalyzer.Data.csproj", "{497AB1D1-E99E-40B7-8003-D9EB55BDAEAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{03637857-A0A2-4DFA-A387-BD55051D9C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03637857-A0A2-4DFA-A387-BD55051D9C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03637857-A0A2-4DFA-A387-BD55051D9C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497AB1D1-E99E-40B7-8003-D9EB55BDAEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497AB1D1-E99E-40B7-8003-D9EB55BDAEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497AB1D1-E99E-40B7-8003-D9EB55BDAEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497AB1D1-E99E-40B7-8003-D9EB55BDAEAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

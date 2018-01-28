@@ -8,8 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Textanalyzer.Data;
-using Textanalyzer.Models;
+using Textanalyzer.Data.Data;
 using Textanalyzer.Services;
 
 namespace Textanalyzer
@@ -28,9 +27,6 @@ namespace Textanalyzer
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlite("Data Source=main.db"));
-
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

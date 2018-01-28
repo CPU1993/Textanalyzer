@@ -12,9 +12,8 @@ namespace Textanalyzer.Data.Data
         public DbSet<Sentence> Sentences { get; set; }
         public DbSet<Word> Words { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=main.db");
+        public DatabaseContext(DbContextOptions options) : base(options)
+        {            
         }
     }
 }

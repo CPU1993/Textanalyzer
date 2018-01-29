@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Textanalyzer.Models;
+using Textanalyzer.Data.Data;
 using Textanalyzer.Models.AccountViewModels;
 using Textanalyzer.Services;
 

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Textanalyzer.Models;
+using Textanalyzer.Data.Data;
 using Textanalyzer.Models.ManageViewModels;
 using Textanalyzer.Services;
 

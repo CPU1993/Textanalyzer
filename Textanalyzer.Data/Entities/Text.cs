@@ -6,7 +6,7 @@ namespace Textanalyzer.Data.Entities
 {
     public class Text
     {
-        public int TextId { get; set; }
-        public List<Sentence> Value { get; set; }
+        public int TextID { get; set; }
+        public string Value { get; set; }
     }
 }

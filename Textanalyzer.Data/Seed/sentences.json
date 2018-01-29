@@ -1,0 +1,19 @@
+﻿[
+  {
+    "Value": "Diktum ist ein Ausdruck für einen bedeutsamen, pointierten Ausspruch, eigentlich das Gesagte.",
+    "TextID": 1
+  },
+  {
+    "Value": "Diktum ist ein Ausdruck für einen bedeutsamen, pointierten Ausspruch, eigentlich das Gesagte.",
+    "TextID": 2
+  },
+  {
+    "Value": "Der Begriff stammt ursprünglich aus dem Lateinischen und ist das Partizip Perfekt Passiv von dicere, sagen.",
+    "TextID": 2,
+    "PreviousID": 2
+  },
+  {
+    "Value": "Diktum ist ein Ausdruck für einen bedeutsamen, pointierten Ausspruch, eigentlich das Gesagte.",
+    "TextID": 3
+  }
+]

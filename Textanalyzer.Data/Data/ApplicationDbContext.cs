@@ -13,6 +13,7 @@ namespace Textanalyzer.Data.Data
         public DbSet<Text> Texts { get; set; }
         public DbSet<Sentence> Sentences { get; set; }
         public DbSet<Word> Words { get; set; }
+        public DbSet<Query> Queries { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -22,9 +23,6 @@ namespace Textanalyzer.Data.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
         }
 
     }

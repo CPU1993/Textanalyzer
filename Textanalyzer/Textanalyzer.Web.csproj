@@ -12,6 +12,7 @@
     <PackageReference Include="Hangfire.Core" Version="1.6.17" />
     <PackageReference Include="Hangfire.Sqlite" Version="1.4.2" />
     <PackageReference Include="Hangfire.Sqlite.Core" Version="1.0.2" />
+    <PackageReference Include="Localization.AspNetCore.TagHelpers" Version="0.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0-alpha2-final" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.0.0-alpha2-final" />
@@ -31,6 +32,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Textanalyzer.Data\Textanalyzer.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Textanalyzer\Controllers\HomeController.de.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

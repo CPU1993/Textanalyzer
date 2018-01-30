@@ -11,9 +11,10 @@ using Textanalyzer.Data.Data;
 namespace Textanalyzer.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180130094553_UpdateText")]
+    partial class UpdateText
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,8 +210,9 @@ namespace Textanalyzer.Data.Migrations
 
                     b.HasKey("SentenceID");
 
-                    b.HasIndex("NextID")
-                        .IsUnique();
+                    b.HasIndex("NextID");
+
+                    b.HasIndex("PreviousID");
 
                     b.HasIndex("TextID");
 
@@ -302,12 +304,15 @@ namespace Textanalyzer.Data.Migrations
             modelBuilder.Entity("Textanalyzer.Data.Entities.Sentence", b =>
                 {
                     b.HasOne("Textanalyzer.Data.Entities.Sentence", "Next")
-                        .WithOne("Previous")
-                        .HasForeignKey("Textanalyzer.Data.Entities.Sentence", "NextID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany()
+                        .HasForeignKey("NextID");
+
+                    b.HasOne("Textanalyzer.Data.Entities.Sentence", "Previous")
+                        .WithMany()
+                        .HasForeignKey("PreviousID");
 
                     b.HasOne("Textanalyzer.Data.Entities.Text", "Text")
-                        .WithMany("Sentences")
+                        .WithMany()
                         .HasForeignKey("TextID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -315,7 +320,7 @@ namespace Textanalyzer.Data.Migrations
             modelBuilder.Entity("Textanalyzer.Data.Entities.Word", b =>
                 {
                     b.HasOne("Textanalyzer.Data.Entities.Sentence", "Sentence")
-                        .WithMany("Words")
+                        .WithMany()
                         .HasForeignKey("SentenceID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

@@ -23,6 +23,10 @@ namespace Textanalyzer.Data.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Word>().HasOne(w => w.Sentence).WithMany(s => s.Words);
+            builder.Entity<Sentence>().HasOne(s => s.Previous).WithOne(s => s.Next);
+            builder.Entity<Sentence>().HasOne(s => s.Next).WithOne(s => s.Previous);
+            builder.Entity<Sentence>().HasOne(s => s.Text).WithMany(t => t.Sentences);
         }
 
     }

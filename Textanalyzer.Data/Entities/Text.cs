@@ -9,5 +9,6 @@ namespace Textanalyzer.Data.Entities
         public int TextID { get; set; }
         public string Value { get; set; }
         public string UserName { get; set; }
+        public ICollection<Sentence> Sentences { get; set; }
     }
 }

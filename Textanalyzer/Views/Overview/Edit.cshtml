@@ -1,10 +1,12 @@
-﻿@model Textanalyzer.Data.Entities.Text
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model Textanalyzer.Data.Entities.Text
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = Localizer["Edit"];
 }
 
-<h2>Edit</h2>
+<h2>@Localizer["Edit"]</h2>
 
 <h4>Text</h4>
 <hr />
@@ -26,6 +28,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Localizer["Back to List"]</a>
 </div>
 

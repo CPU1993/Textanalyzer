@@ -142,6 +142,15 @@
           "lib/netstandard1.3/Hangfire.SqlServer.dll": {}
         }
       },
+      "LevenshteinMinimumEditDistance/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/MinimumEditDistance.dll": {}
+        },
+        "runtime": {
+          "lib/MinimumEditDistance.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -5740,6 +5749,16 @@
         "lib/netstandard1.3/Hangfire.SqlServer.dll",
         "lib/netstandard1.3/Hangfire.SqlServer.xml",
         "tools/install.sql"
+      ]
+    },
+    "LevenshteinMinimumEditDistance/1.2.0": {
+      "sha512": "UZhTJv/StGIkfjk6IH77gCoQ2M9NwF/R9Sdx6h39KxMwRCQjAbQkGHZ02mz5Tzxj/djco4rOuCR8BKmHHuXF/w==",
+      "type": "package",
+      "path": "levenshteinminimumeditdistance/1.2.0",
+      "files": [
+        "levenshteinminimumeditdistance.1.2.0.nupkg.sha512",
+        "levenshteinminimumeditdistance.nuspec",
+        "lib/MinimumEditDistance.dll"
       ]
     },
     "Libuv/1.10.0": {
@@ -14352,6 +14371,7 @@
       "Hangfire.Core >= 1.6.17",
       "Hangfire.Sqlite >= 1.4.2",
       "Hangfire.Sqlite.Core >= 1.0.2",
+      "LevenshteinMinimumEditDistance >= 1.2.0",
       "Localization.AspNetCore.TagHelpers >= 0.3.0",
       "Microsoft.AspNetCore.All >= 2.0.5",
       "Microsoft.AspNetCore.SignalR >= 1.0.0-alpha2-final",
@@ -14433,6 +14453,10 @@
             "target": "Package",
             "version": "[1.0.2, )"
           },
+          "LevenshteinMinimumEditDistance": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
           "Localization.AspNetCore.TagHelpers": {
             "target": "Package",
             "version": "[0.3.0, )"
@@ -14490,6 +14514,16 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'LevenshteinMinimumEditDistance 1.2.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "LevenshteinMinimumEditDistance",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
+@model Textanalyzer.Data.Util.Search
 
 @{
     ViewData["Title"] = Localizer["Search"];
@@ -9,8 +10,14 @@
 
 <h2>@Localizer["Search"]</h2>
 
-<form method="POST">
-    <label for="searchString">@Localizer["What are you looking for?"]</label>
-    <input type="text" id="searchString" placeholder=@Localizer["Keywords (max 3)"] />
-    <input type="submit"/>
+<form asp-action="Search">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="SearchString" class="control-label"></label>
+        <input asp-for="SearchString" class="form-control" />
+        <span asp-validation-for="SearchString" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-default" />
+    </div>
 </form>

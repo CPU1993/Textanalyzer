@@ -22,9 +22,10 @@ namespace Textanalyzer.Web.Controllers
         private readonly ILogger<SearchApiController> _log;
         private readonly ApplicationDbContext _context;
 
-        public SearchApiController(ApplicationDbContext context)
+        public SearchApiController(ApplicationDbContext context, ILogger<SearchApiController> log)
         {
             _context = context;
+            _log = log;
         }
 
         // GET: api/SearchApi/5

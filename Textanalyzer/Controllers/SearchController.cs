@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Textanalyzer.Data.Util;
 
 namespace Textanalyzer.Web.Controllers
 {
@@ -19,18 +20,18 @@ namespace Textanalyzer.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Search(string searchString)
+        public async Task<IActionResult> Search(Search search)
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            if (string.IsNullOrWhiteSpace(searchString))
+            if (string.IsNullOrWhiteSpace(search.SearchString))
             {
                 return View();
             }
 
-            string[] split = searchString.Split(' ');
+            string[] split = search.SearchString.Split(' ');
             List<string> temp = new List<string>();
 
             if (split.Length > 3)
@@ -57,12 +58,12 @@ namespace Textanalyzer.Web.Controllers
 
             urlHelp = urlHelp.Trim();
 
-            string url = HttpContext.Request.Host + "/api/searchapi/" + urlHelp;
+            string url = "https://" + HttpContext.Request.Host + "/api/searchapi/" + urlHelp;
 
-            var stringTask = client.GetStringAsync("https://api.github.com/orgs/dotnet/repos");
+            var stringTask = client.GetStringAsync(url);
 
-            string msg = await stringTask;
-
+            var msg = await stringTask;
+            
             return Json(msg);
         }
     }

@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
+using Textanalyzer.Web.Hubs;
+using Microsoft.Extensions.Logging;
 
 namespace Textanalyzer
 {
@@ -31,6 +33,8 @@ namespace Textanalyzer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=main.db", b => b.MigrationsAssembly("Textanalyzer.Web")));
+
+            services.AddLogging(loggingBuilder => loggingBuilder.AddSeq());
 
             services.AddLocalization();
 
@@ -63,6 +67,8 @@ namespace Textanalyzer
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+
+            services.AddSignalR();
 
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, opts => { opts.ResourcesPath = "Resources"; }).AddDataAnnotationsLocalization();
         }
@@ -97,6 +103,11 @@ namespace Textanalyzer
 
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(options.Value);
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<SearchHub>("search");
+            });
 
             app.UseMvc(routes =>
             {

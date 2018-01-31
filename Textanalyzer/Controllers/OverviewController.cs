@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Textanalyzer.Data.Data;
 using Textanalyzer.Data.Entities;
 using Textanalyzer.Data.Util;
@@ -16,11 +17,13 @@ namespace Textanalyzer.Web.Controllers
     [Authorize]
     public class OverviewController : Controller
     {
+        private readonly ILogger<OverviewController> _log;
         private readonly ApplicationDbContext _context;
 
-        public OverviewController(ApplicationDbContext context)
+        public OverviewController(ApplicationDbContext context, ILogger<OverviewController> log)
         {
             _context = context;
+            _log = log;
         }
 
         // GET: Overview
@@ -29,6 +32,7 @@ namespace Textanalyzer.Web.Controllers
             TextHandler th = new TextHandler(_context, HttpContext.User.Identity.Name);
 
             IList<Text> texts = th.GetCurrentUserTexts();
+            _log.LogInformation("Texts for User {0} were read!", HttpContext.User.Identity.Name);
             return View(texts);
         }
 
@@ -47,9 +51,13 @@ namespace Textanalyzer.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (string.IsNullOrWhiteSpace(text.Value))
+                {
+                    return View();
+                }
 
                 CreateWorker(text);
-
+                _log.LogInformation("Text for User {0} was created!", HttpContext.User.Identity.Name);
                 return RedirectToAction(nameof(Index));
             }
             return View(text);
@@ -60,6 +68,7 @@ namespace Textanalyzer.Web.Controllers
             text.UserName = HttpContext.User.Identity.Name;
             _context.Add(text);
             _context.SaveChanges();
+            _log.LogDebug("Text saved to database!", HttpContext.User.Identity.Name);
 
             int textId = _context.Texts.FirstOrDefault(x => x.Value == text.Value).TextID;
 
@@ -97,6 +106,7 @@ namespace Textanalyzer.Web.Controllers
                     sentence.PreviousID = id;
                     _context.Sentences.Add(sentence);
                     _context.SaveChanges();
+                    _log.LogDebug("Sentence saved to database!", HttpContext.User.Identity.Name);
                     int currentId = sentence.SentenceID;
 
                     WordWorker(trimmedS, currentId);
@@ -105,6 +115,7 @@ namespace Textanalyzer.Web.Controllers
                     previous.NextID = currentId;
                     _context.Sentences.Update(previous);
                     _context.SaveChanges();
+                    _log.LogDebug("Sentence saved to database!", HttpContext.User.Identity.Name);
 
                     id = currentId;
                     i++;
@@ -128,6 +139,7 @@ namespace Textanalyzer.Web.Controllers
 
             _context.Words.AddRange(words);
             _context.SaveChanges();
+            _log.LogDebug("Word saved to database!", HttpContext.User.Identity.Name);
             result = true;
 
             return result;
@@ -178,6 +190,11 @@ namespace Textanalyzer.Web.Controllers
             {
                 try
                 {
+                    if (string.IsNullOrWhiteSpace(text.Value))
+                    {
+                        return View();
+                    }
+
                     DeleteWorker(id);
                     CreateWorker(text);
                 }
@@ -192,6 +209,7 @@ namespace Textanalyzer.Web.Controllers
                         throw;
                     }
                 }
+                _log.LogInformation("Text for User {0} was edited!", HttpContext.User.Identity.Name);
                 return RedirectToAction(nameof(Index));
             }
             return View(text);
@@ -233,6 +251,7 @@ namespace Textanalyzer.Web.Controllers
             }
 
             DeleteWorker(id);
+            _log.LogInformation("Text for User {0} was delted!", HttpContext.User.Identity.Name);
 
             return RedirectToAction(nameof(Index));
         }

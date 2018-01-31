@@ -12,8 +12,8 @@ namespace Textanalyzer.Data.Util
             this.TotalScore = totalScore;
             this.Sections = sections;
         }
-        int TextID { get; set; }
-        int TotalScore { get; set; }
-        List<Section> Sections { get; set; }
+        public int TextID { get; set; }
+        public int TotalScore { get; set; }
+        public List<Section> Sections { get; set; }
     }
 }

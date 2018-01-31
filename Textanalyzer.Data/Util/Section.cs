@@ -13,8 +13,8 @@ namespace Textanalyzer.Data.Util
             this.Summary = summary;
         }
 
-        int SentenceID { get; set; }
-        int Score { get; set; }
-        List<string> Summary { get; set; }
+        public int SentenceID { get; set; }
+        public int Score { get; set; }
+        public List<string> Summary { get; set; }
     }
 }

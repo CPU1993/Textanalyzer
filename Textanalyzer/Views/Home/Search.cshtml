@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Search";
+}
+
+<script src=”js/signalr-client-1.0.0-alpha2-final.js”></script>
+
+<script>    
+    var transportType = signalR.TransportType.WebSockets;
+
+    //can also be ServerSentEvents or LongPolling
+    var logger = new signalR.ConsoleLogger(signalR.LogLevel.Information);
+    var searchHub = new signalR.HttpConnection(`http://${document.location.host}:${document.location.port}/search`, { transport: transportType, logger: logger });
+    var searchConnection = new signalR.HubConnection(searchHub, logger);
+    
+    searchConnection.on('Search', (words) => {
+        console.log('searching');
+    });
+
+    function search(words) {
+        chatConnection.invoke('Search', message);
+    }    
+</script>
+
+<h2>Search</h2>
+

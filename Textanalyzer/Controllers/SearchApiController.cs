@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MinimumEditDistance;
+using Newtonsoft.Json;
 using Textanalyzer.Data.Data;
 using Textanalyzer.Data.Entities;
 using Textanalyzer.Data.Util;
@@ -67,14 +68,13 @@ namespace Textanalyzer.Web.Controllers
             }
 
             List<Score> scores = RateTexts(texts, maxWords);
-            
+
             return new ObjectResult(scores);
         }
 
         private List<Score> RateTexts(List<Text> texts, string[] words)
         {
             List<Score> scores = new List<Score>();
-            int stop = 0;
             foreach (Text t in texts)
             {
                 Score score = null;
@@ -136,12 +136,28 @@ namespace Textanalyzer.Web.Controllers
                 score = new Score(t.TextID, totalScore, sections);
                 scores.Add(score);
 
-                stop++;
-                if (stop >= 5)
+            }
+
+            Score tempScore = null;
+
+            for (int i = 0; i < scores.Count; i++)
+            {
+                for (int j = 0; j < scores.Count - 1; j++)
                 {
-                    break;
+                    if (scores[j].TotalScore < scores[j + 1].TotalScore)
+                    {
+                        tempScore = scores[j + 1];
+                        scores[j + 1] = scores[j];
+                        scores[j] = tempScore;
+                    }
                 }
             }
+
+            if (scores.Count > 5)
+            {
+                scores.RemoveRange(4, scores.Count);
+            }
+
             return scores;
         }
 

@@ -68,7 +68,7 @@ namespace Textanalyzer
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
-            services.AddSignalR();
+            //services.AddSignalR();
 
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, opts => { opts.ResourcesPath = "Resources"; }).AddDataAnnotationsLocalization();
         }
@@ -104,10 +104,10 @@ namespace Textanalyzer
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(options.Value);
 
-            app.UseSignalR(routes =>
-            {
-                routes.MapHub<SearchHub>("search");
-            });
+            //app.UseSignalR(routes =>
+            //{
+            //    routes.MapHub<SearchHub>("search");
+            //});
 
             app.UseMvc(routes =>
             {

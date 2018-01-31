@@ -53,6 +53,7 @@ namespace Textanalyzer.Web.Controllers
             {
                 if (string.IsNullOrWhiteSpace(text.Value))
                 {
+                    _log.LogError("No text entered for creation!");
                     return View();
                 }
 
@@ -192,6 +193,7 @@ namespace Textanalyzer.Web.Controllers
                 {
                     if (string.IsNullOrWhiteSpace(text.Value))
                     {
+                        _log.LogError("No text entered for editing!");
                         return View();
                     }
 

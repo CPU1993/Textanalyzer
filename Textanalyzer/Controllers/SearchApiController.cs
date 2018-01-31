@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using MinimumEditDistance;
 using Newtonsoft.Json;
 using Textanalyzer.Data.Data;
@@ -18,6 +19,7 @@ namespace Textanalyzer.Web.Controllers
     [Route("api/SearchApi")]
     public class SearchApiController : Controller
     {
+        private readonly ILogger<SearchApiController> _log;
         private readonly ApplicationDbContext _context;
 
         public SearchApiController(ApplicationDbContext context)
@@ -68,7 +70,7 @@ namespace Textanalyzer.Web.Controllers
             }
 
             List<Score> scores = RateTexts(texts, maxWords);
-
+            _log.LogInformation("Found scores sent!");
             return new ObjectResult(scores);
         }
 

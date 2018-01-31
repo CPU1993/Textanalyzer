@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Search"];
+}
+
+@*<script src=”js/signalr-client-1.0.0-alpha2-final.js”></script>*@
+
+<h2>@Localizer["Search"]</h2>
+
+<form method="POST">
+    <label for="searchString">@Localizer["What are you looking for?"]</label>
+    <input type="text" id="searchString" placeholder=@Localizer["Keywords (max 3)"] />
+    <input type="submit"/>
+</form>

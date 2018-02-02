@@ -118,6 +118,7 @@ namespace Textanalyzer
             //{
             //    routes.MapHub<SearchHub>("search");
             //});
+            
 
             app.UseMvc(routes =>
             {

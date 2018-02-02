@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using Textanalyzer.Web.Hubs;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Rewrite;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Textanalyzer
 {
@@ -34,6 +36,11 @@ namespace Textanalyzer
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data Source=main.db", b => b.MigrationsAssembly("Textanalyzer.Web")));
 
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
+
             services.AddLogging(loggingBuilder => loggingBuilder.AddSeq());
 
             services.AddLocalization();
@@ -49,7 +56,7 @@ namespace Textanalyzer
                 opts.DefaultRequestCulture = new RequestCulture(culture: "de", uiCulture: "de");
                 opts.SupportedCultures = supportedCultures;
                 opts.SupportedUICultures = supportedCultures;
-            });           
+            });
 
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
@@ -76,6 +83,9 @@ namespace Textanalyzer
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var rewriteOptions = new RewriteOptions().AddRedirectToHttps(301,5001);
+            app.UseRewriter(rewriteOptions);
+
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
                 if (!serviceScope.ServiceProvider.GetService<ApplicationDbContext>().AllMigrationsApplied())

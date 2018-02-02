@@ -28,7 +28,8 @@ namespace Textanalyzer
                     {
                         listenOptions.UseHttps("mypfx.pfx", "1234");
                     });
-                })
+                }).
+                UseIISIntegration()
                 .Build();
     }
 }

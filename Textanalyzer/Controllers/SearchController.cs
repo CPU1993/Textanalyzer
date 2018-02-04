@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Textanalyzer.Data.Util;
 
 namespace Textanalyzer.Web.Controllers
@@ -63,8 +64,16 @@ namespace Textanalyzer.Web.Controllers
             var stringTask = client.GetStringAsync(url);
 
             var msg = await stringTask;
-            
-            return Json(msg);
+
+            try
+            {
+                List<Score> scoreList = JsonConvert.DeserializeObject<List<Score>>(msg);
+                return Json(scoreList);
+            }
+            catch
+            {
+                return Json("No data found!");
+            }
         }
     }
 }

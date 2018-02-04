@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Über</value>
+  </data>
   <data name="Use this service to save and analyse texts. Use the search page to look for texts or if you are logged in use the Overview to create, edit or delete your texts." xml:space="preserve">
     <value>Verwende diesen Dienst um Texte zu speichern und analysieren. Unter dem Reiter Suchen, können Texte gesucht werden und wenn man eingeloggt ist, kann man unter Übersicht seine Texte anlgen, bearbeiten und löschen.</value>
   </data>

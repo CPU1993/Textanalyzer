@@ -120,4 +120,7 @@
   <data name="Home Page" xml:space="preserve">
     <value>Startseite</value>
   </data>
+  <data name="This is the Homepage of the Website, for more Information see About." xml:space="preserve">
+    <value>Dies ist die Startseite der Webseite, für weitere Informationen siehe Über.</value>
+  </data>
 </root>
